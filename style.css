@@ -1,0 +1,21 @@
+body {
+font-size: 16px;
+font-family: Arial, Helvetica, sans-serif;
+color: blue;
+align-content: center;
+}
+.questions{
+    font-weight: 600;
+}
+.answers{
+margin-bottom: 16px;
+}
+#submit{
+    font-size: 20px;
+    background-color:beige;
+    color: #297;
+    text-align: center;
+}
+#submit:hover{
+    background-color: #297;
+}
