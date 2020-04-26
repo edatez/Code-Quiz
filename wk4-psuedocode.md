@@ -20,7 +20,7 @@
 
 # Potential HTML Elements:
 * Start Button
-* var startButton = document.getElementI ('start-button');
+* var startButton = document.getElementId ('start-button');
 
 * Form/Input to allow us to add our initials
 
@@ -61,7 +61,7 @@ function validateAnswer() {
 
 # How are the different actions going to run
  * click the start button to run  startGame()
- click and answer button to run 
+ * click and answer button to run 
 
 Start Quiz
 

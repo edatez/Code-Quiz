@@ -6,32 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Code Quiz</title>
 
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+       
+    <!-- CSS Reference -->
+    <link rel="stylesheet" href="Assets/style.css">
+
     <!-- Bootstrap Reference for responsive website -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-   
-    <!-- CSS Reference -->
-    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
     <header class="header">
-    
-    <h1>-Coding Quiz Challange-</h1>
-    <h3>Here is a coding assessment to test your skills! You will get questions with multiple choice answers as an interactive challange in a timed manner. Try to pick the correct answers and
-        see your scores at the end.</h3>
-    
-    </header>
-
-    <div class="questions"></div>
-    <button id="submit"> Submit </button>
-    <div class="results"></div>
-    <div class="container">
-        <h2 id="countdown"></h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Code Quiz Challange</h1>
+                    <h2>Here is a coding assessment to test your skills! You will get questions with multiple choice answers as an interactive challange in a timed manner. Try to pick the correct answers and
+                        see your scores at the end.</h2>
+                </div>
+            </div>
+        </div>
        
+    </header>
+  
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+               
+                 <button id="startQuiz-btn" class="btn btn-primary"> Start Quiz </button>
+
+                <div class="results"></div>
+         
+            </div>
+        </div>
+            <div class="controls">
+     
+            <!-- <button id="next-btn" class="next-btn btn hide"> Next </button> -->
+            <form initials="Enter Initials" action="send.php" method="POST" >
+                <inout type="text" name="name"/>
+                <button type ="submit">Submit</button>
+            </form>
+            <form>
+                <div class="form-group">
+                  <label for="Enter Initials">Enter Initials</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Initials">
+                </div>
+
+              </form>
+    
+    </div>
+        <!-- current time html element -->
+        <div id="countdown"></div>
+        <div class="questions"></div>
+        <div class="choice"></div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="Assets/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
 </body>
 
