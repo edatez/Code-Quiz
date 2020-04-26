@@ -11,7 +11,7 @@ var timerEl = document.getElementById("countdown");
 var i = 0;
 
 function timer() {
-  var timeLeft = 20;
+  var timeLeft = 50;
 
   var timeInterval = setInterval(function() {
     timerEl.textContent = timeLeft + " seconds remaining";
@@ -27,40 +27,16 @@ function timer() {
 timer();
 
 
-// function generateQuiz(questions, quizContainer, resultsContainer, submitButton,){}
-
-// function showQuestions (questions, quizContainer){
-
-// var output =[];
-// var answers =[];
-
-// for (var i=0; i<questions.length; i++){
-//     answers=[];
-// }
-// }
-// function showResults(questions, quizContainer, resultsContainer){}
-
-
-// // calling show the questions function to run
-// showQuestions(questions, quizContainer);
-
-// // when submit button is clicked, show the results
-// submitButton.onclick = function(){
-//     showResults();
-// }
-
-
 document.getElementById("startQuiz-btn").addEventListener("click", function(event) {
   event.preventDefault();
   console.log("button");
   var btn = document.getElementById("startQuiz-btn")
-  btn.style.display = 'none';
-  // if(event.target.matches("button")) {
-  //   var item = document.createElement("div");
-  //   item.textContent = groceries[event.target.parentElement.id];
-  //   shoppingCartEl.append(item);
-  // }
+  btn.style.display = "none";
+  h1.style.display="none";
+  
  });
+
+
 
 
 var score=0;
@@ -68,7 +44,6 @@ var questions = [
   {
     question: "Commonly used data types DO NOT include: ",
     choices: ["string", "booleans", "alerts", "numbers"],
-    // choices[0] == "string"
     answer: "alerts"
   },
   {
@@ -92,87 +67,21 @@ var questions = [
     answer: "console.log"
   },
 ]
-console.log(questions[4].choices[3] == questions[4].answer);
+// console.log(questions[4].choices[3] == questions[4].answer);
 
-
-// var fruits = ["apple", "orange", "cherry"];
-// fruits.forEach(myFunction);
-
-// function myFunction(item, index) {
-//   document.getElementById("demo").innerHTML += index + ":" + item + "<br>";
-// }
 
   document.querySelector(".questions").textContent = questions[0].question;
 
 
 questions[0].choices.forEach(function(choice, index) { 
   // document.querySelector(".choice").textContent = index + choice;
+  var btn = document.createElement("button"); 
 });
 
 
-// document.querySelector(".questions").textContent = "Commonly used data types DO NOT include:"
-// var score= 0
-// for (var i=0; i<questions.length; i++){
-//   var response=window.prompt (questions[i]);
-//   if (response ==questions[i].answer){
-//     score++;
-//     alert("correct!");
-//   }
-//   else {
-//     alert ("WRONG!");
-//   }
-// }
-// alert ("You got" + score + " !");
-
-// function endGame(){
-// document.getElementById("initials-form").addEventListener("submit", function (event)
-// event.preventDefault();
-// localStorage.setItem("initials", userInitials.value);
-// localStorage.setItem("Score"),score,value)
-// };
-
-// document.querySelector(".questions").textContent = questions[0].Q1;
 
 questions[0].choices.forEach(function(choice, index) {
   console.log("Your current index is " + index + " and your current choice is " + choice);
 })
 
 
-//append your quesitons in here
-// Buttons for each answer
-
-//  when the user clicks and answer buttoon we need 
-// function validateAnswer() {
-//   if (notValue)
-//   removeAdditionaltime();
-// }
-
-
-
-// quizContainer.innerHTML = output.join('');
-
-
-// question : "The condition in an if else statement is enclosed within _____."
-
-// use array for questions and use .push. get my third item
-
-// on submit, show results
-
-// Form/Input to allow us to add our initials
-// * When the user submits their initials
-//     * Add their high score to local storage
-
-// submitButton.addEventListener('click', showResults);
-// $(document).ready(function() {
-
-// /*listEl.addEventListener("click", function(event) {
-//   event.preventDefault();
-//   if(event.target.matches("button")) {
-//     var item = document.createElement("div");
-//     item.textContent = groceries[event.target.parentElement.id];
-//     shoppingCartEl.append(item);
-//   }
-// });*/
-
-//  // Run QUIZ
-//  reset();
