@@ -14,7 +14,7 @@ document.getElementById("startQuiz-btn").addEventListener("click", function (eve
 
   // document.getElementById('context'), function (event)
   // #context.style.display = "none"
-
+  displayQuestion(0);
 });
 
 document.getElementById('initial-form').style.display = 'none'
@@ -84,7 +84,7 @@ function displayQuestion(questionNumber) {
     });
   }
 }
-displayQuestion(0);
+
 
 
 
