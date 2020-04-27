@@ -1,49 +1,26 @@
-// var startBtn = document.getElementById ('start');
-// var quizContainer = document.getElementById('questions');
-// var submitButton = document.getElementById('submit');
-// var resultsContainer = document.getElementById('results');
+var startBtn = document.getElementById ('start');
+var quizContainer = document.getElementById('questions');
+var submitButton = document.getElementById('submit');
+var resultsContainer = document.getElementById('results');
 
 // when the user clicks the start button we need to start the timer and prompt the first question
 // click the start button to run  startGame()
 
-
-// var timerEl = document.getElementById("countdown");
-// var i = 0;
-
-// function timer() {
-//   var timeLeft = 50;
-
-//   var timeInterval = setInterval(function() {
-//     timerEl.textContent = timeLeft + " seconds remaining";
-//     timeLeft--;
-
-//     if (timeLeft === 0) {
-//       timerEl.textContent = "";
-//       clearInterval(timeInterval);
-//     }
-//     // console.log(timeLeft)
-//   }, 1000);
-// }
-// timer();
-
-
-document.getElementById("startQuiz-btn").addEventListener("click", function(event) {
+document.getElementById("startQuiz-btn").addEventListener("click", function (event) {
   event.preventDefault();
   console.log("button");
   var btn = document.getElementById("startQuiz-btn")
   btn.style.display = "none";
-  
-// document.getElementById(h1), function(event)
-// #h1.style.display = "none"
- });
 
-document.getElementById('initial-form').style.display='none'
+  // document.getElementById('context'), function (event)
+  // #context.style.display = "none"
 
+});
 
-
+document.getElementById('initial-form').style.display = 'none'
 
 
-var score=0;
+var score = 0;
 var questions = [
   {
     question: "Commonly used data types DO NOT include: ",
@@ -72,41 +49,39 @@ var questions = [
   },
 ]
 
-function displayQuestion(questionNumber){
-// soru sonunda ki 
-  if (questionNumber>=questions.length){
-    document.getElementById('initial-form').style.display='block'
-    document.getElementById('question-box').style.display="none"
+function displayQuestion(questionNumber) {
+  // soru sonunda boxi kapatmak lazim
+  if (questionNumber >= questions.length) {
+    document.getElementById('initial-form').style.display = 'block'
+    document.getElementById('question-box').style.display = "none"
   } else {
-  
-document.querySelector("#question").textContent = questions[questionNumber].question;
-console.log ("test")
+
+    document.querySelector("#question").textContent = questions[questionNumber].question;
+    console.log("test")
 
 
-questions[questionNumber].choices.forEach(function(choice, index) { 
-  // document.querySelector(".choice").textContent = index + choice;
-  var btn = document.createElement("button"); 
-  btn.innerText = choice
+    questions[questionNumber].choices.forEach(function (choice, index) {
+      var btn = document.createElement("button");
+      btn.innerText = choice
 
-  if (choice==questions[questionNumber].answer){
+      if (choice == questions[questionNumber].answer) {
 
-    btn.addEventListener('click', function(){
-      document.getElementById("answer").innerHTML=""
-      displayQuestion(questionNumber+1)
-    })
+        btn.addEventListener('click', function () {
+        document.getElementById("answer").innerHTML = ""
+        displayQuestion(questionNumber + 1)
+        })
 
-  } else {
-    btn.addEventListener('click', function(){
-      document.getElementById("answer").innerHTML=""
-      // timer i azalticak
-      displayQuestion(questionNumber+1)
-    })
-  }
+      } else {
+        btn.addEventListener('click', function () {
+          document.getElementById("answer").innerHTML = ""
+          // timer i azalticak
+          displayQuestion(questionNumber + 1)
+        })
+      }
 
-  document.getElementById('answer').appendChild(btn);
+      document.getElementById('answer').appendChild(btn);
 
-
-});
+    });
   }
 }
 displayQuestion(0);
@@ -116,19 +91,6 @@ displayQuestion(0);
 
 
 //  none dan block a cevir son soruda question-box i cevir 
-
-
-// function showQuestion(j) {
-
-//   var questionelement = document.getElementById("question-text");
-//   questionelement.textContent = question[j];
-  
-//   var optionselement = document.getElementById("options");
-//   optionselement.innerHTML = "";
-  
-//   var resultelement = document.getElementById("results")
-
-
 // basi kapat, 
 // submit e event listener ekle
 // timer ekle
