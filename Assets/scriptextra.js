@@ -144,5 +144,15 @@ questions[0].choices.forEach(function(choice, index) {
 //   }
 // });*/
 
+
+
+
+
+// [{name:name,score:score},{name:"IT",score:34}]
+// localStorage.getItem   //JSON.parse
+// localStorage.setItem  // stringify
+
+
+
 //  // Run QUIZ
 //  reset();
