@@ -8,12 +8,13 @@
 
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
-       
+
     <!-- CSS Reference -->
     <link rel="stylesheet" href="Assets/style.css">
 
     <!-- Bootstrap Reference for responsive website -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 </head>
 
@@ -23,34 +24,38 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1>Code Quiz Challange</h1>
-                    <p id="context">Here is a coding assessment to test your skills! You will get questions with multiple choice answers as an interactive challange in a timed manner. Try to pick the correct answers and
+                    <p id="context">Here is a coding assessment to test your skills! You will get questions with
+                        multiple choice answers as an interactive challange in a timed manner. Try to pick the correct
+                        answers and
                         see your scores at the end.<p>
-                    <button id="startQuiz-btn" class="btn btn-primary"> Start Quiz </button>
-                    <div id="timer"></div>
+                            <button id="startQuiz-btn" class="btn btn-primary"> Start Quiz </button>
+                            <div id="timer"></div>
                 </div>
             </div>
         </div>
     </header>
-        <div class="container" id="question-box">
-            <h3 id="question"></h3>
-                <div class="answer" id="answer"></div>
-                
-        </div>
-        <div class="container" id="initial-form">
-            <h3 id="game-over"></h3>
-                <form id="initials-form">
-                    <h3>Game Over</h3>
-                    <h4 id="score"></h4>
-                    <label for="initials">Please enter your intials</label><br>
-                    <input type="text" id="initials" name="initials">
-                    <button id="submit-button">Submit</button>
-                </form>
-        </div>
+    <div class="container" id="question-box">
+        <h3 id="question"></h3>
+        <div class="answer" id="answer"></div>
+
     </div>
-       
- 
-  
-                
+    <div id="results"></div>
+    <div class="container" id="initial-form">
+        <h3 id="game-over"></h3>
+
+        <form id="initials-form">
+            <h3>Game Over</h3>
+            <h4 id="score"></h4>
+            <label for="initials">Please enter your intials</label><br>
+            <input type="text" id="initials" name="initials">
+            <button id="submit-button">Submit</button>
+        </form>
+    </div>
+    </div>
+
+
+
+
     <script src="Assets/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
