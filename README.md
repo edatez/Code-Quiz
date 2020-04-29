@@ -24,6 +24,10 @@ WHEN the game is over
 THEN I can save my initials and score
 
 
+Here is a screenshot from the actual application:
+![code quiz](./Assets/screenshot.png)
+
+
 The following animation demonstrates the application functionality:
 
 ![code quiz](./Assets/04-web-apis-homework-demo.gif)
