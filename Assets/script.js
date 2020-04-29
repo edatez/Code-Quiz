@@ -17,7 +17,7 @@ function starttimer() {
 
 timeInterval = setInterval(function() {
   timerelement.textContent = "Time:" + timeLeft;
-  timeLeft--;   // timeleft = timeleft - 1      ++   +1
+  timeLeft--;   
 
   if (timeLeft <= 0) {
     timerelement.textContent = "";
@@ -151,6 +151,15 @@ function displayQuestion(questionNumber) {
     });
   }
 }
+
+// submit eventlistener for the initials-form
+// take the value of the input -
+// local storage-save
+// list of scores.
+// push new list to the...save the data...
+// JSON.stringify () convert an array into string to save into local stoarge
+
+// JSON.parse() string  back into an array -out from local storage
 
 
 
