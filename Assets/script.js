@@ -15,24 +15,24 @@ var questionNumber = 0;
 function starttimer() {
 
 
-  timeInterval = setInterval(function () {
+  timeInterval = setInterval(function() {
     timerelement.textContent = "Time:" + timeLeft;
-    timeLeft--;
-
+    timeLeft--;   
+  
     if (timeLeft <= 0) {
       timerelement.textContent = "";
       clearInterval(timeInterval);
-
+      
       score = timeLeft;
       timerelement.textContent = "";
       clearInterval(timeInterval);
-
+  
       choiceselement.innerHTML = "";
-      form.style.display = "block";
+      form.style.display="block";
     }
-
+  
   }, 1000);
-}
+  }
 
 
 
@@ -89,7 +89,7 @@ var questions = [
 ]
 
 function displayQuestion(questionNumber) {
-  // soru sonunda boxi kapatmak lazim
+  
   if (questionNumber >= questions.length) {
 
     document.getElementById('question-box').style.display = "none"
@@ -101,9 +101,10 @@ function displayQuestion(questionNumber) {
     timerelement.textContent = "";
     clearInterval(timeInterval);
     console.log("score: ", score)
-    resultselement.textContent = "Your Final Score: " + score;
+   resultselement.textContent = "Your Final Score: " + score;
+   // document.getElementById("resultScore").textContent =  "Your Final Score: " + score;
     optionselement.innerHTML = "";
-    form.style.display = "block";
+    form.style.display="block";
     // create a function for this and cALL HERE
   } else {
 
@@ -122,10 +123,11 @@ function displayQuestion(questionNumber) {
       btn.innerText = choice
 
       if (choice == questions[questionNumber].answer) {
+
         btn.addEventListener('click', function () {
           console.log("right")
-          document.getElementById("answer").innerHTML = ""
-          displayQuestion(questionNumber + 1)
+        document.getElementById("answer").innerHTML = ""
+        displayQuestion(questionNumber + 1)
         })
 
       } else {
@@ -133,15 +135,20 @@ function displayQuestion(questionNumber) {
           console.log("wrong")
           document.getElementById("answer").innerHTML = ""
           // cleaning the question area for next question
-          // timer drops
+          // timer i azalticak
           timeLeft = timeLeft - 10
           displayQuestion(questionNumber + 1)
         })
       }
 
+      /// add event listner 
+      // and inside of the function you car read the text from the event.target
+      // you can verify th response
+      
       //Scoring and initials.
       //WHEN the game is over I can save my initials and score 
-
+      
+// 
       document.getElementById("submit-button").addEventListener("click", saveScore);
       if (localStorage.getItem("score")) {
         highscores = JSON.parse(localStorage.getItem("score"));
@@ -160,14 +167,18 @@ function displayQuestion(questionNumber) {
         localStorage.setItem("answer", JSON.stringify(highscores));
 
       }
-
-
+// 
 
       document.getElementById('answer').appendChild(btn);
 
     });
   }
 }
+
+      //Scoring and initials.
+      //WHEN the game is over I can save my initials and score 
+
+  
 
 // submit eventlistener for the initials-form, take the value of the input -
 // local storage-save
