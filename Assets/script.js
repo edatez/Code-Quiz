@@ -1,4 +1,4 @@
-var startBtn = document.getElementById ('start');
+var startBtn = document.getElementById('start');
 var quizContainer = document.getElementById('questions');
 var submitButton = document.getElementById('submit');
 var resultselement = document.getElementById('results');
@@ -7,7 +7,7 @@ var timerelement = document.getElementById("timer")
 var timeLeft = 75;
 var score = 0;
 var timeInterval;
-var highscores =[];
+var highscores = [];
 var questionNumber = 0;
 
 
@@ -15,23 +15,23 @@ var questionNumber = 0;
 function starttimer() {
 
 
-timeInterval = setInterval(function() {
-  timerelement.textContent = "Time:" + timeLeft;
-  timeLeft--;   
+  timeInterval = setInterval(function () {
+    timerelement.textContent = "Time:" + timeLeft;
+    timeLeft--;
 
-  if (timeLeft <= 0) {
-    timerelement.textContent = "";
-    clearInterval(timeInterval);
-    
-    score = timeLeft;
-    timerelement.textContent = "";
-    clearInterval(timeInterval);
+    if (timeLeft <= 0) {
+      timerelement.textContent = "";
+      clearInterval(timeInterval);
 
-    choiceselement.innerHTML = "";
-    form.style.display="block";
-  }
+      score = timeLeft;
+      timerelement.textContent = "";
+      clearInterval(timeInterval);
 
-}, 1000);
+      choiceselement.innerHTML = "";
+      form.style.display = "block";
+    }
+
+  }, 1000);
 }
 
 
@@ -41,7 +41,7 @@ timeInterval = setInterval(function() {
 // click the start button to run  startGame()
 
 document.getElementById("startQuiz-btn").addEventListener("click", function (event) {
-  event.preventDefault(); 
+  event.preventDefault();
 
   console.log("button", event.target);
 
@@ -52,7 +52,7 @@ document.getElementById("startQuiz-btn").addEventListener("click", function (eve
   // #context.style.display = "none"
   starttimer();
   displayQuestion(0);
-  
+
 });
 
 document.getElementById('initial-form').style.display = 'none';
@@ -93,7 +93,7 @@ function displayQuestion(questionNumber) {
   if (questionNumber >= questions.length) {
 
     document.getElementById('question-box').style.display = "none"
-    document.getElementById('initial-form').style.display = 'block' 
+    document.getElementById('initial-form').style.display = 'block'
 
     timerelement.textContent = "";
     clearInterval(timeInterval);
@@ -101,10 +101,9 @@ function displayQuestion(questionNumber) {
     timerelement.textContent = "";
     clearInterval(timeInterval);
     console.log("score: ", score)
-   resultselement.textContent = "Your Final Score: " + score;
-   // document.getElementById("resultScore").textContent =  "Your Final Score: " + score;
+    resultselement.textContent = "Your Final Score: " + score;
     optionselement.innerHTML = "";
-    form.style.display="block";
+    form.style.display = "block";
     // create a function for this and cALL HERE
   } else {
 
@@ -115,9 +114,8 @@ function displayQuestion(questionNumber) {
     // for (var i=0; i< questions[questionNumber].choices.length; i++){
     //   var btn = document.createElement("button");
     //   btn.innerText = questions[questionNumber].choices[i]
-
     // }
-// to create answers buttons 
+    // create answers buttons 
 
     questions[questionNumber].choices.forEach(function (choice, index) {
       var btn = document.createElement("button");
@@ -126,8 +124,8 @@ function displayQuestion(questionNumber) {
       if (choice == questions[questionNumber].answer) {
         btn.addEventListener('click', function () {
           console.log("right")
-        document.getElementById("answer").innerHTML = ""
-        displayQuestion(questionNumber + 1)
+          document.getElementById("answer").innerHTML = ""
+          displayQuestion(questionNumber + 1)
         })
 
       } else {
@@ -141,31 +139,31 @@ function displayQuestion(questionNumber) {
         })
       }
 
-//Scoring and initials.
-//WHEN the game is over I can save my initials and score 
+      //Scoring and initials.
+      //WHEN the game is over I can save my initials and score 
 
-document.getElementById("submit-button").addEventListener("click", saveScore);
-if (localStorage.getItem("score")) {
-  highscores = JSON.parse(localStorage.getItem("score"));
-}
-else {
-  highscores =[];
-}
-function saveScore(event) {
-  event.preventDefault();
+      document.getElementById("submit-button").addEventListener("click", saveScore);
+      if (localStorage.getItem("score")) {
+        highscores = JSON.parse(localStorage.getItem("score"));
+      }
+      else {
+        highscores = [];
+      }
+      function saveScore(event) {
+        event.preventDefault();
 
-  var yourData = {
-      score: score,
-      initials: document.getElementById("initials-form").value
-  }
-  scoreArray.push(yourData);
-  localStorage.setItem("result", JSON.stringify(scoreArray));
-  
-}
+        var yourData = {
+          score: score,
+          initials: document.getElementById("initials-form").value
+        }
+        highscores.push(yourData);
+        localStorage.setItem("answer", JSON.stringify(highscores));
+
+      }
 
 
 
-document.getElementById('answer').appendChild(btn);
+      document.getElementById('answer').appendChild(btn);
 
     });
   }
