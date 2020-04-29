@@ -7,7 +7,7 @@ var timerelement = document.getElementById("timer")
 var timeLeft = 75;
 var score = 0;
 var timeInterval;
-var highscores =[]
+var highscores =[];
 var questionNumber = 0;
 
 
@@ -124,7 +124,6 @@ function displayQuestion(questionNumber) {
       btn.innerText = choice
 
       if (choice == questions[questionNumber].answer) {
-
         btn.addEventListener('click', function () {
           console.log("right")
         document.getElementById("answer").innerHTML = ""
@@ -136,24 +135,43 @@ function displayQuestion(questionNumber) {
           console.log("wrong")
           document.getElementById("answer").innerHTML = ""
           // cleaning the question area for next question
-          // timer i azalticak
+          // timer drops
           timeLeft = timeLeft - 10
           displayQuestion(questionNumber + 1)
         })
       }
 
-      /// add event listner 
-      // and inside of the function you car read the text from the event.target
-      // you can verify th response
+//Scoring and initials.
+//WHEN the game is over I can save my initials and score 
 
-      document.getElementById('answer').appendChild(btn);
+document.getElementById("submit-button").addEventListener("click", saveScore);
+if (localStorage.getItem("score")) {
+  highscores = JSON.parse(localStorage.getItem("score"));
+}
+else {
+  highscores =[];
+}
+function saveScore(event) {
+  event.preventDefault();
+
+  var yourData = {
+      score: score,
+      initials: document.getElementById("initials-form").value
+  }
+  scoreArray.push(yourData);
+  localStorage.setItem("result", JSON.stringify(scoreArray));
+  
+}
+
+
+
+document.getElementById('answer').appendChild(btn);
 
     });
   }
 }
 
-// submit eventlistener for the initials-form
-// take the value of the input -
+// submit eventlistener for the initials-form, take the value of the input -
 // local storage-save
 // list of scores.
 // push new list to the...save the data...
