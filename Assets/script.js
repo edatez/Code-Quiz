@@ -11,9 +11,7 @@ var highscores = [];
 var questionNumber = 0;
 
 
-
 function starttimer() {
-
 
   timeInterval = setInterval(function() {
     timerelement.textContent = "Time:" + timeLeft;
@@ -33,9 +31,6 @@ function starttimer() {
   
   }, 1000);
   }
-
-
-
 
 // when the user clicks the start button we need to start the timer and prompt the first question
 // click the start button to run  startGame()
@@ -103,8 +98,8 @@ function displayQuestion(questionNumber) {
     console.log("score: ", score)
    resultselement.textContent = "Your Final Score: " + score;
    // document.getElementById("resultScore").textContent =  "Your Final Score: " + score;
-    optionselement.innerHTML = "";
-    form.style.display="block";
+    // optionselement.innerHTML = "";
+    // form.style.display="block";
     // create a function for this and cALL HERE
   } else {
 
@@ -143,30 +138,15 @@ function displayQuestion(questionNumber) {
 
       /// add event listner 
       // and inside of the function you car read the text from the event.target
-      // you can verify th response
+      // you can verify the response
       
       //Scoring and initials.
       //WHEN the game is over I can save my initials and score 
-      
+
 // 
-      document.getElementById("submit-button").addEventListener("click", saveScore);
-      if (localStorage.getItem("score")) {
-        highscores = JSON.parse(localStorage.getItem("score"));
-      }
-      else {
-        highscores = [];
-      }
-      function saveScore(event) {
-        event.preventDefault();
 
-        var yourData = {
-          score: score,
-          initials: document.getElementById("initials-form").value
-        }
-        highscores.push(yourData);
-        localStorage.setItem("answer", JSON.stringify(highscores));
 
-      }
+
 // 
 
       document.getElementById('answer').appendChild(btn);
@@ -175,28 +155,45 @@ function displayQuestion(questionNumber) {
   }
 }
 
-      //Scoring and initials.
-      //WHEN the game is over I can save my initials and score 
+/// board of the quizz   "[{name:"IA", score:22},{name:"MA",score:45}]"     
 
+if (localStorage.getItem("score")) {
+  highscores = JSON.parse(localStorage.getItem("score"));
+}
+else {
+  highscores = [];
+}
+
+document.getElementById("submit-button").addEventListener("click", saveScore);
   
+function saveScore(event) {
+  event.preventDefault();
 
+  var yourData = {
+    score: score,
+    initials: document.getElementById("initials").value
+  }
+  console.log("---", yourData)
+  highscores.push(yourData);
+  localStorage.setItem("score", JSON.stringify(highscores));
+
+  for (var i=0; i<highscores.length; i++) {
+    let elem = document.createElement("h3")
+    elem.innerText= highscores[i].initials + ": " + highscores[i].score
+    document.getElementById("ranking").append(elem)
+  }
+
+}
 // submit eventlistener for the initials-form, take the value of the input -
 // local storage-save
 // list of scores.
 // push new list to the...save the data...
 // JSON.stringify () convert an array into string to save into local stoarge
-
 // JSON.parse() string  back into an array -out from local storage
-
-
-
-
-
-
 //  none dan block a cevir son soruda question-box i cevir 
 // basi kapat, 
 // submit e event listener ekle
 // timer ekle
 // initialsdan sonra sonucu kapat high score ac  onu listele
 // high score gizlemece
-// 
+
