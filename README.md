@@ -4,7 +4,7 @@ A coding quiz web application; a combination of multiple-choice questions and in
 
 ## User Story
 
-AS A coding bootcamp student
+AS A coding student
 I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
 SO THAT I can gauge my progress compared to my peers
 
@@ -28,7 +28,5 @@ Here is a screenshot from the actual application:
 ![code quiz](./Assets/screenshot.png)
 
 
-The following animation demonstrates the application functionality:
 
-![code quiz](./Assets/04-web-apis-homework-demo.gif)
 

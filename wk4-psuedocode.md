@@ -1,7 +1,7 @@
-* We'll be working to answer the following questions for the Timed Quiz Application:
-* What kind of things or information does the code need to use or keep track of? This information will translate into the variables you'll need to define in your code.
-* What kind of actions does my code need to perform? This information will become the functions you'll need to define.
-* How is each action supposed to be triggered or run? This will tell you what kind of event listeners you need to add to allow your code to run at the correct times.
+* Timed Quiz Application:
+* What kind of things or information does the code need to use or keep track of? This information will translate into the variables that needs to be defined.
+* What kind of actions does my code need to perform? This will give me the functions.
+* How is each action supposed to be triggered or run? This will let me know what kind of event listeners I need to add to allow my code to run at the correct times.
 
 # Things In Code:
 
@@ -30,26 +30,26 @@
 
 # What kind of actions does my code need to perform
 
-* when the user clicks the start button we need to start the timer and prompt the first question
+* when the user clicks the start button I need to start the timer and prompt the first question
 startGame() {
      // code here
 }
 
-* when the user clicks and answer buttoon we need 
+* when the user clicks and answer button I need 
 function validateAnswer() {
     if (notValue)
     removeAdditionaltime();
 }
 
     * Validate if their answer is correct
-        * if not correct we need to remove additional time from the clock
-    * then we need to move to the next question
+        * if not correct I need to remove additional time from the clock
+    * then I need to move to the next question
 
-* We need to use an interval to create a countdown -setInterval (callback, 1000);
+* I need to use an interval to create a countdown -setInterval (callback, 1000);
     * Increment elapsed time
     * Calc current time left by doing (totalTime - elapsedTime )
     * check if the timer has reached zero
-        * we need to end the game
+        * I need to end the game
     * update the time left number in the html (textContent)
 
 * Game End functionality 
@@ -75,7 +75,7 @@ Start Quiz
  2. The condition in an if else statement is enclosed within _____.
  -quotes
  -curly brackets
- -paranthesis x
+ -parenthesis x
 -square brackets
 3. Arrays in Javascript can be used to store _____:
  -numbers and strings
@@ -86,8 +86,7 @@ Start Quiz
  -commas
  -curly brackets
  -quotes x
--paranthesis
-
+-parenthesis
   5. A very useful tool used during development and debugging for printing content to the debugger is:
  -JavaScript x
  -Terminal/Bash
